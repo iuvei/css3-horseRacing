@@ -1,0 +1,50 @@
+@keyframes horse_run {
+    0% {background-position: 50px 0;}
+    8.33% {background-position: -250px 0;}
+    16.67% {background-position: -550px 0;}
+    25% {background-position: 10px -200px;}
+    33.33% {background-position: -300px -200px;}
+    41.67% {background-position: -610px -200px;}
+    50% {background-position: 10px -405px;}
+    58.33% {background-position: -300px -407px;}
+    66.67% {background-position: -610px -407px;}
+    75% {background-position: 10px -620px;}
+    83.33% {background-position: -300px -620px;}
+    100% {background-position: -610px -620px;}
+}
+
+@keyframes horse_move {
+    0% {
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(2800px);
+        -moz-transform: translateX(2800px);
+        -ms-transform: translateX(2800px);
+        -o-transform: translateX(2800px);
+        transform: translateX(2800px);
+    }
+}
+.horseWrap{
+    margin-top:140px;
+    transform: scale(0.5);
+}
+.horse{
+    width: 308px;
+    height: 198px;
+    margin-top: -140px;
+    background-position: 50px 0;
+    -webkit-animation:horse_run infinite 650ms forwards step-start,horse_move 1 4000ms forwards ease;
+    -o-animation:horse_run infinite 650ms forwards step-start,horse_move 1 4000ms forwards ease;
+    animation:horse_run infinite 650ms forwards step-start,horse_move 1 4000ms forwards ease;
+}
+.paused {
+    animation-play-state: paused!important;
+}
+.running {
+    animation-play-state: running!important;
+}
