@@ -1,6 +1,7 @@
 let horses = [...document.querySelectorAll('.horse')];
+let horseWrap = document.querySelector('.horseWrap');
 let totalDistance = 10000;//总共要跑的距离
-let duration = [220.0,230.3,230.6,...Array(5).fill(1).map(()=>300*(randomBetween(0.78,0.8))).sort()];//预先设定每匹马要跑的时间
+let duration = [230.0,230.3,230.6,...Array(5).fill(1).map(()=>300*(randomBetween(0.77,0.775))).sort()];//预先设定每匹马要跑的时间
 let openData = [8,4,5,6,1,3,2,7];//从后台传回的开奖结果
 let openResult = new Object();//声明一个对象来存储openData和duration的对应关系
 openData.forEach((item,index)=>{//openData和duration对应
@@ -10,7 +11,7 @@ function horseRun(horses){//马跑的动作函数
     horses.forEach((horse,index)=>{
         horse.style.backgroundImage = `url(./horse_${index+1}_a.png)`;
         horse.style.top = `${100+index*20}px`;
-        horse.style.animation = `horse_run infinite 650ms forwards step-start`;
+        horse.style.animation = `horse_run infinite 450ms forwards step-start`;
     });
 }
 
@@ -26,6 +27,8 @@ function horseMove(horses,speeds = {},leftValue = {},total = totalDistance){//�
     horseRun(horses);
     let timeMap = createTimeMap(horses,timeMaps);
     let timeout = null;
+    let horseWrapLeftValue = 0;
+    let scrollX = 0;
     function move(){
         let horsesLefts = getHorsesLeft(horses);
         horses.forEach((horse,index)=>{
@@ -40,6 +43,14 @@ function horseMove(horses,speeds = {},leftValue = {},total = totalDistance){//�
             leftValue[horse.id] += speeds[horse.id];
             horse.style.left = `${leftValue[horse.id]}px`;
         });
+        let speedMin = Math.min(...Object.values(speeds));
+        let speedMax = Math.max(...Object.values(speeds));
+        let leftMax = Math.max(...Object.values(horsesLefts).map((value)=>parseInt(value)));
+        horseWrapLeftValue -= 30;//背景切换速度
+        scrollX = leftMax<1350?0:leftMax-1350;//防止马跑出屏幕外看不到
+
+        window.scrollTo(scrollX,0);//摄像机移动
+        horseWrap.style.backgroundPosition = `${horseWrapLeftValue}px 0`;//背景跟着动
         timeout = setTimeout(move,1000/16);
     }
     move();
@@ -50,10 +61,10 @@ function randomBetween(a,b){//获取两个数之间的随机数
 }
 function getHorsesLeft(horses){//获取每匹马的left值,即跑的距离
     let horsesLefts = new Object();
-    horses.forEach((horse)=>horsesLefts[horse.id]= window.getComputedStyle(horse).left);
+    horses.forEach((horse)=>horsesLefts[horse.id] = window.getComputedStyle(horse).left);
     return horsesLefts;
 }
-/*把路程分成3段，每段的速度不一样，可中慢快，中快慢，慢快中，慢中快，快慢中，快中慢六种;
+/*把路程分成3段，每段的速度不一样，可中慢快，中快慢，慢快中，慢中快，快慢中，快中慢六种随机一种;
  * 把时间分成三段，[[0.35,0.5,0.15],[0.35,0.15,0.5],[0.5,0.35,0.15],[0.5,0.15,0.35],[0.15,0.5,0.35],[0.15,0.35,0.5]]六种;
  * */
 /*function createSpeed(){//随机生成跑步速度

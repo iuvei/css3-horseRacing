@@ -13,7 +13,7 @@
     100% {background-position: -610px -620px;}
 }
 
-@keyframes horse_move {
+/*@keyframes horse_move {
     0% {
         -webkit-transform: translateX(0);
         -moz-transform: translateX(0);
@@ -28,20 +28,31 @@
         -o-transform: translateX(2800px);
         transform: translateX(2800px);
     }
-}
+}*/
+/*.outerHorseWrap{
+    overflow: hidden;
+    position: relative;
+}*/
+/*.innerHorseWrap{*/
+    /*overflow-x: scroll;*/
+/*}*/
+/*.innerHorseWrap::-webkit-scrollbar {*/
+    /*display: none;*/
+/*}*/
 .horseWrap{
     margin-top:140px;
-    background: url(./bg_track_0.jpg) no-repeat;
+    background: url(./bg_track_0.jpg) repeat-x;
     height:562px;
     position: relative;
-    /*transition: left linear .1s*/
+    transition: left linear .1s;
+    background-position: 0 0;
+    width:999999px;
 }
 .horse{
     width: 308px;
     height: 198px;
     position: absolute;
     background-position: 50px 0;
-    /*transition: left linear .1s;*/
 }
 .paused {
     animation-play-state: paused!important;
