@@ -31,16 +31,17 @@
 }
 .horseWrap{
     margin-top:140px;
-    transform: scale(0.5);
+    background: url(./bg_track_0.jpg) no-repeat;
+    height:562px;
+    position: relative;
+    /*transition: left linear .1s*/
 }
 .horse{
     width: 308px;
     height: 198px;
-    margin-top: -140px;
+    position: absolute;
     background-position: 50px 0;
-    -webkit-animation:horse_run infinite 650ms forwards step-start,horse_move 1 4000ms forwards ease;
-    -o-animation:horse_run infinite 650ms forwards step-start,horse_move 1 4000ms forwards ease;
-    animation:horse_run infinite 650ms forwards step-start,horse_move 1 4000ms forwards ease;
+    /*transition: left linear .1s;*/
 }
 .paused {
     animation-play-state: paused!important;
