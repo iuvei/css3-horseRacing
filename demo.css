@@ -1,31 +1,73 @@
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
 @keyframes horse_run {
-    0% {background-position: 50px 0;}
-    8.33% {background-position: -250px 0;}
-    16.67% {background-position: -550px 0;}
-    25% {background-position: 10px -200px;}
-    33.33% {background-position: -300px -200px;}
-    41.67% {background-position: -610px -200px;}
-    50% {background-position: 10px -405px;}
-    58.33% {background-position: -300px -407px;}
-    66.67% {background-position: -610px -407px;}
-    75% {background-position: 10px -620px;}
-    83.33% {background-position: -300px -620px;}
-    100% {background-position: -610px -620px;}
+    0% {background-position: 25px 0;}
+    8.33% {background-position: -125px 0;}
+    16.67% {background-position: -275px 0;}
+    25% {background-position: 5px -100px;}
+    33.33% {background-position: -150px -100px;}
+    41.67% {background-position: -305px -100px;}
+    50% {background-position: 5px -203.5px;}
+    58.33% {background-position: -150px -203.5px;}
+    66.67% {background-position: -152.5px -203.5px;}
+    75% {background-position: 5px -310px;}
+    83.33% {background-position: -150px -310px;}
+    100% {background-position: -305px -310px;}
 }
 
 .horseWrap{
     margin-top:140px;
-    background: url(./bg_track_0.jpg) repeat-x;
-    height:562px;
+    background: url(./images/horseRoad.png) repeat-x;
+    height:306px;
+    width: 800px;
     position: relative;
     transition: left linear .1s;
     background-position: 0 0;
 }
 .horse{
-    width: 308px;
-    height: 198px;
+    width: 154px;
+    height: 99px;
     position: absolute;
-    background-position: 50px 0;
+    background-position: 25px 0;
+}
+.horseWrap .horseLineLeft{
+    position: absolute;
+    width:11px;
+    height:306px;
+    left:40px;
+    background-image: url(./images/horseLine.png);
+    background-repeat: repeat-y;
+}
+.horseWrap .horseLineRight{
+    position: absolute;
+    width:11px;
+    height:306px;
+    right:75px;
+    background-image: url(./images/horseLine.png);
+    background-repeat: repeat-y;
+}
+.horseWrap .horseQuan{
+    width:160px;
+    height:98px;
+    position: absolute;
+    right:0;
+    top:-95px;
+    background: url(./images/quanquan.png) no-repeat;
+}
+.hidden{
+    display: none!important;
 }
 .paused {
     animation-play-state: paused!important;
@@ -41,26 +83,74 @@ i{
 }
 .bottomSpace{
     background-color: #0c264f;
+    width:800px;
+    height:102px;
+    line-height:102px;
+    margin-top: -2px;
+}
+
+.bottomSpace .logoIssue{
+    width:20%;
+    position: relative;
+}
+.bottomSpace .rangeNums{
+    width:80%;
+    margin-top:15px;
+}
+.bottomSpace .horseLogo{
+    width: 135px;
+    height: 52px;
+    position: absolute;
+    top: -10px;
+    z-index: 1;
+}
+.bottomSpace .logoIssue .horseIssue{
+    border: 1px solid #878c1c;
+    height: 50px;
+    position: absolute;
+    top: 31px;
+    width: 145px;
+    left: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    color: white;
+}
+.bottomSpace .logoIssue .horseIssue .horseIssueTitle{
+    position: absolute;
+    top: -38px;
+    width: 100%;
+    font-size: 12px;
+    margin-left: 20px;
+}
+.bottomSpace .logoIssue .horseIssue .horseIssueDetail{
+    position: absolute;
+    top: -15px;
+    width: 100%;
+    margin-left: 18px;
 }
 .rangeNum_10,.rangeNum_9,.rangeNum_8,.rangeNum_7,.rangeNum_6,.rangeNum_5,.rangeNum_4,.rangeNum_3,.rangeNum_2,.rangeNum_1{
     color: #ffffff;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
     border-radius: 5px;
     border: 1px solid #d5e9f5;
     position: relative;
+    margin:0 5px;
 }
 .rangeNums .rangeNum{
     position: absolute;
-    top: -35px;
-    left: 8px;
+    top: -38px;
+    left: 17px;
     font-size: 18px;
     font-weight: 600;
     color: #f7f7f7;
+}
+.rangeNums .rangeNum_10 .rangeNum{
+    left: 12px;
 }
 .rangeNum_10{
     background-color: #dd3022;
