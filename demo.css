@@ -46,7 +46,6 @@
     position: relative;
     transition: left linear .1s;
     background-position: 0 0;
-    width:999999px;
 }
 .horse{
     width: 308px;

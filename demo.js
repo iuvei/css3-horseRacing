@@ -1,7 +1,7 @@
 let horses = [...document.querySelectorAll('.horse')];
 let horseWrap = document.querySelector('.horseWrap');
-let totalDistance = 10000;//总共要跑的距离
-let duration = [230.0,230.3,230.6,...Array(5).fill(1).map(()=>300*(randomBetween(0.77,0.775))).sort()];//预先设定每匹马要跑的时间
+let totalDistance = 1000;//总共要跑的距离
+let duration = [60.0,61,62,...Array(5).fill(1).map(()=>300*(randomBetween(0.22,0.24))).sort()];//预先设定每匹马要跑的时间
 let openData = [8,4,5,6,1,3,2,7];//从后台传回的开奖结果
 let openResult = new Object();//声明一个对象来存储openData和duration的对应关系
 openData.forEach((item,index)=>{//openData和duration对应
@@ -47,9 +47,7 @@ function horseMove(horses,speeds = {},leftValue = {},total = totalDistance){//�
         let speedMax = Math.max(...Object.values(speeds));
         let leftMax = Math.max(...Object.values(horsesLefts).map((value)=>parseInt(value)));
         horseWrapLeftValue -= 30;//背景切换速度
-        scrollX = leftMax<1350?0:leftMax-1350;//防止马跑出屏幕外看不到
 
-        window.scrollTo(scrollX,0);//摄像机移动
         horseWrap.style.backgroundPosition = `${horseWrapLeftValue}px 0`;//背景跟着动
         timeout = setTimeout(move,1000/16);
     }
