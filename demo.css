@@ -26,9 +26,13 @@
     83.33% {background-position: -150px -310px;}
     100% {background-position: -305px -310px;}
 }
-
+.innerHorseWrap{
+    height: 608px;
+    overflow: hidden;
+    width: 800px;
+    position: relative;
+}
 .horseWrap{
-    margin-top:140px;
     background: url(./images/horseRoad.png) repeat-x;
     height:306px;
     width: 800px;
@@ -41,8 +45,16 @@
     height: 99px;
     position: absolute;
     background-position: 25px 0;
+    z-index: 1;
 }
-.horseWrap .horseLineLeft{
+.horseSky{
+    width:800px;
+    height:98px;
+    margin-bottom: -5px;
+    background-image: url(./images/horseSky.png);
+    background-repeat: repeat-x;
+}
+.horseLineLeft{
     position: absolute;
     width:11px;
     height:306px;
@@ -50,20 +62,86 @@
     background-image: url(./images/horseLine.png);
     background-repeat: repeat-y;
 }
-.horseWrap .horseLineRight{
+.horseOrders{
+    position: absolute;
+    left:65px;
+    height:306px;
+    width: 35px;
+    text-align: center;
+}
+.horseOrders .horseOrder{
+    width:100%;
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    font-weight:bold;
+}
+
+.horseOrders .horseOrder.horseOrder_10{
+    background-color: #8866f6;
+    color: #000000;
+}
+.horseOrders .horseOrder.horseOrder_9{
+    background-color: #4e92f9;
+    color: #000000;
+}
+.horseOrders .horseOrder.horseOrder_8{
+    background-color: #f87b00;
+    color: #000000;
+}
+.horseOrders .horseOrder.horseOrder_7{
+    background-color: #e800fd;
+    color: #000000;
+}
+.horseOrders .horseOrder.horseOrder_6{
+    background-color: #212020;
+    color: #ffc000;
+}
+.horseOrders .horseOrder.horseOrder_5{
+    background-color: #00d422;
+    color: #ffffff;
+}
+.horseOrders .horseOrder.horseOrder_4{
+    background-color: #fbd500;
+    color: #1c1a18;
+}
+.horseOrders .horseOrder.horseOrder_3{
+    background-color: #0006ef;
+    color: #ffffff;
+}
+.horseOrders .horseOrder.horseOrder_2{
+    background-color: #dcd9d9;
+    color: #1c1a18;
+}
+.horseOrders .horseOrder.horseOrder_1{
+    background-color: #ef0404;
+    color: #ffffff;
+}
+
+.horseLineRight{
     position: absolute;
     width:11px;
     height:306px;
-    right:75px;
+    right:-75px;
+    top: 95px;
     background-image: url(./images/horseLine.png);
     background-repeat: repeat-y;
 }
-.horseWrap .horseQuan{
+.horseQuanWrap{
+    overflow: hidden;
+    width: 800px;
+    height: 404px;
+    right: 0;
+    position: absolute;
+    top: 0;
+}
+.horseQuan{
     width:160px;
     height:98px;
     position: absolute;
-    right:0;
-    top:-95px;
+    right: -160px;
+    top:0px;
     background: url(./images/quanquan.png) no-repeat;
 }
 .hidden{
