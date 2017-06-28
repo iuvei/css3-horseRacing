@@ -13,32 +13,6 @@
     100% {background-position: -610px -620px;}
 }
 
-/*@keyframes horse_move {
-    0% {
-        -webkit-transform: translateX(0);
-        -moz-transform: translateX(0);
-        -ms-transform: translateX(0);
-        -o-transform: translateX(0);
-        transform: translateX(0);
-    }
-    100% {
-        -webkit-transform: translateX(2800px);
-        -moz-transform: translateX(2800px);
-        -ms-transform: translateX(2800px);
-        -o-transform: translateX(2800px);
-        transform: translateX(2800px);
-    }
-}*/
-/*.outerHorseWrap{
-    overflow: hidden;
-    position: relative;
-}*/
-/*.innerHorseWrap{*/
-    /*overflow-x: scroll;*/
-/*}*/
-/*.innerHorseWrap::-webkit-scrollbar {*/
-    /*display: none;*/
-/*}*/
 .horseWrap{
     margin-top:140px;
     background: url(./bg_track_0.jpg) repeat-x;
@@ -58,4 +32,73 @@
 }
 .running {
     animation-play-state: running!important;
+}
+.inline-block{
+    display: inline-block;
+}
+i{
+    font-style: normal;
+}
+.bottomSpace{
+    background-color: #0c264f;
+}
+.rangeNum_10,.rangeNum_9,.rangeNum_8,.rangeNum_7,.rangeNum_6,.rangeNum_5,.rangeNum_4,.rangeNum_3,.rangeNum_2,.rangeNum_1{
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid #d5e9f5;
+    position: relative;
+}
+.rangeNums .rangeNum{
+    position: absolute;
+    top: -35px;
+    left: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #f7f7f7;
+}
+.rangeNum_10{
+    background-color: #dd3022;
+    color: #ffffff;
+}
+.rangeNum_9{
+    background-color: #d9d7d7;
+    color:#1b1a18;
+}
+.rangeNum_8{
+    background-color: #0022e6;
+    color: #ffffff;
+}
+.rangeNum_7{
+    background-color: #eaca44;
+    color: #1c1a18;
+}
+.rangeNum_6{
+    background-color: #5ccd46;
+    color: #ffffff;;
+}
+.rangeNum_5{
+    background-color: #202020;
+    color: #f7c143;;
+}
+.rangeNum_4{
+    background-color: #d43af3;
+    color: #1b1a18;
+}
+.rangeNum_3{
+    background-color: #e88030;
+    color: #000000;
+}
+.rangeNum_2{
+    background-color: #578ee9;
+    color: #000000;
+}
+.rangeNum_1{
+    background-color: #7461d4;
+    color: #000000;
 }

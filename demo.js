@@ -1,7 +1,7 @@
 let horses = [...document.querySelectorAll('.horse')];
 let horseWrap = document.querySelector('.horseWrap');
 let totalDistance = 1000;//总共要跑的距离
-let duration = [60.0,61,62,...Array(5).fill(1).map(()=>300*(randomBetween(0.22,0.24))).sort()];//预先设定每匹马要跑的时间
+let duration = [35.0,37,39,...Array(5).fill(1).map(()=>40*(randomBetween(1.1,1.3))).sort()];//预先设定每匹马要跑的时间
 let openData = [8,4,5,6,1,3,2,7];//从后台传回的开奖结果
 let openResult = new Object();//声明一个对象来存储openData和duration的对应关系
 openData.forEach((item,index)=>{//openData和duration对应
@@ -28,7 +28,6 @@ function horseMove(horses,speeds = {},leftValue = {},total = totalDistance){//�
     let timeMap = createTimeMap(horses,timeMaps);
     let timeout = null;
     let horseWrapLeftValue = 0;
-    let scrollX = 0;
     function move(){
         let horsesLefts = getHorsesLeft(horses);
         horses.forEach((horse,index)=>{
@@ -53,7 +52,7 @@ function horseMove(horses,speeds = {},leftValue = {},total = totalDistance){//�
     }
     move();
 }
-horseMove(horses);
+//horseMove(horses);
 function randomBetween(a,b){//获取两个数之间的随机数
     return Math.random()*(b-a)+a;
 }
