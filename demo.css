@@ -13,18 +13,21 @@
     visibility: hidden
 }
 @keyframes horse_run {
-    0% {background-position: 25px 0;}
-    8.33% {background-position: -125px 0;}
-    16.67% {background-position: -275px 0;}
-    25% {background-position: 5px -100px;}
-    33.33% {background-position: -150px -100px;}
-    41.67% {background-position: -305px -100px;}
-    50% {background-position: 5px -203.5px;}
-    58.33% {background-position: -150px -203.5px;}
-    66.67% {background-position: -152.5px -203.5px;}
-    75% {background-position: 5px -310px;}
-    83.33% {background-position: -150px -310px;}
-    100% {background-position: -305px -310px;}
+    0% {background-position: 20px 0;}
+    7.14% {background-position: -125px 0;}
+    14.28% {background-position: -280px 0;}
+    21.42% {background-position: 0px -100px;}
+    28.56% {background-position: -155px -100px;}
+    35.7% {background-position: -310px -100px;}
+    42.84% {background-position: 0px -203.5px;}
+    49.98% {background-position: -155px -203.5px;}
+    57.12% {background-position: -310px -203.5px;}
+    64.26% {background-position: 0px -310px;}
+    71.4% {background-position: -150px -310px;}
+    78.54% {background-position: -295px -310px;}
+    85.68% {background-position: 15px -412px;}
+    92.82% {background-position: -135px -412px;}
+    100% {background-position: -285px -412px;}
 }
 .innerHorseWrap{
     height: 608px;
@@ -41,7 +44,7 @@
     background-position: 0 0;
 }
 .horse{
-    width: 154px;
+    width: 150px;
     height: 99px;
     position: absolute;
     background-position: 25px 0;
@@ -174,6 +177,7 @@ i{
 .bottomSpace .rangeNums{
     width:80%;
     margin-top:15px;
+    line-height:125px;
 }
 .bottomSpace .horseLogo{
     width: 135px;
@@ -207,66 +211,72 @@ i{
     margin-left: 18px;
 }
 .rangeNum_10,.rangeNum_9,.rangeNum_8,.rangeNum_7,.rangeNum_6,.rangeNum_5,.rangeNum_4,.rangeNum_3,.rangeNum_2,.rangeNum_1{
-    color: #ffffff;
+    /*color: #ffffff;*/
     width: 45px;
     height: 45px;
     line-height: 45px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    border-radius: 5px;
-    border: 1px solid #d5e9f5;
+    /*text-align: center;*/
+    /*font-size: 30px;*/
+    /*font-weight: bold;*/
+    /*border-radius: 5px;*/
+    /*border: 1px solid #d5e9f5;*/
     position: relative;
     margin:0 5px;
 }
 .rangeNums .rangeNum{
     position: absolute;
     top: -38px;
-    left: 17px;
+    left: 16px;
     font-size: 18px;
     font-weight: 600;
     color: #f7f7f7;
 }
+
+.horseNum{
+    background-image: url(./images/number_h.png);
+    background-repeat: no-repeat;
+}
+
 .rangeNums .rangeNum_10 .rangeNum{
     left: 12px;
 }
 .rangeNum_10{
-    background-color: #dd3022;
+    /*background-color: #dd3022;*/
     color: #ffffff;
 }
 .rangeNum_9{
-    background-color: #d9d7d7;
+    /*background-color: #d9d7d7;*/
     color:#1b1a18;
 }
 .rangeNum_8{
-    background-color: #0022e6;
+    /*background-color: #0022e6;*/
     color: #ffffff;
 }
 .rangeNum_7{
-    background-color: #eaca44;
+    /*background-color: #eaca44;*/
     color: #1c1a18;
 }
 .rangeNum_6{
-    background-color: #5ccd46;
+    /*background-color: #5ccd46;*/
     color: #ffffff;;
 }
 .rangeNum_5{
-    background-color: #202020;
+    /*background-color: #202020;*/
     color: #f7c143;;
 }
 .rangeNum_4{
-    background-color: #d43af3;
+    /*background-color: #d43af3;*/
     color: #1b1a18;
 }
 .rangeNum_3{
-    background-color: #e88030;
+    /*background-color: #e88030;*/
     color: #000000;
 }
 .rangeNum_2{
-    background-color: #578ee9;
+    /*background-color: #578ee9;*/
     color: #000000;
 }
 .rangeNum_1{
-    background-color: #7461d4;
+    /*background-color: #7461d4;*/
     color: #000000;
 }
