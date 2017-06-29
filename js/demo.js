@@ -14,7 +14,7 @@ let horseLineLeftValue;
 let horseOrdersLeftValue;
 let horseNumElems = [...document.querySelectorAll('.rangeNums>div.horseNum')];//排序马匹
 let totalDistance = 575;//总共要跑的距离 草地宽度800-马身150-终点线距离右边75
-let duration = [35.0,37,39,...Array(7).fill(1).map(()=>40*(randomBetween(1.5,2))).sort()];//预先设定每匹马要跑的时间
+let duration = [34.0,37,39,...Array(7).fill(1).map(()=>40*(randomBetween(1.5,2))).sort()];//预先设定每匹马要跑的时间
 let openData = [8,4,5,6,1,3,2,7,9,10];//从后台传回的开奖结果
 let reverse_openData = openData.map((v,i,arr)=>arr[arr.length-1-i]);//反转排序
 let horsesLeftsValues = null;

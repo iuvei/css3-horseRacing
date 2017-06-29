@@ -36,7 +36,7 @@
     position: relative;
 }
 .horseWrap{
-    background: url(./images/horseRoad.png) repeat-x;
+    background: url(../images/horseRoad.png) repeat-x;
     height:306px;
     width: 800px;
     position: relative;
@@ -54,7 +54,7 @@
     width:800px;
     height:98px;
     margin-bottom: -5px;
-    background-image: url(./images/horseSky.png);
+    background-image: url(../images/horseSky.png);
     background-repeat: repeat-x;
 }
 .horseLineLeft{
@@ -62,7 +62,7 @@
     width:11px;
     height:306px;
     left:40px;
-    background-image: url(./images/horseLine.png);
+    background-image: url(../images/horseLine.png);
     background-repeat: repeat-y;
 }
 .horseOrders{
@@ -128,7 +128,7 @@
     height:306px;
     right:-75px;
     top: 95px;
-    background-image: url(./images/horseLine.png);
+    background-image: url(../images/horseLine.png);
     background-repeat: repeat-y;
 }
 .horseQuanWrap{
@@ -145,7 +145,7 @@
     position: absolute;
     right: -160px;
     top:0px;
-    background: url(./images/quanquan.png) no-repeat;
+    background: url(../images/quanquan.png) no-repeat;
 }
 .hidden{
     display: none!important;
@@ -233,7 +233,7 @@ i{
 }
 
 .horseNum{
-    background-image: url(./images/number_h.png);
+    background-image: url(../images/number_h.png);
     background-repeat: no-repeat;
 }
 
