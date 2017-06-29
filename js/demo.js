@@ -6,8 +6,8 @@ let horseOrderArr = [...document.querySelectorAll('.horseOrders .horseOrder')];
 let horseWrapLeftValue;
 let horseSkyLeftValue;
 let horseLineLeft = document.querySelector('.horseLineLeft');
-let horseLineRight = document.querySelector(' .horseLineRight');
-let horseQuan = document.querySelector(' .horseQuan');
+let horseLineRight = document.querySelector('.horseLineRight');
+let horseQuan = document.querySelector('.horseQuan');
 let horseQuanRightValue;
 let horseLineRightValue;
 let horseLineLeftValue;
@@ -96,10 +96,10 @@ function horseMove(horses,speeds = {},leftValue = {},total = totalDistance){//�
         horsesLeftsValues = Object.values(horsesLefts);//马的距离数组
         let sort_horsesLeftsValues = horsesLeftsValues.sort((a,b)=>parseInt(a)-parseInt(b));//按跑动距离从小道大排序后的数组
         let sort_horsesLeftKeys = sort_horsesLeftsValues.map((value)=>getKeyFromValue(horsesLefts,value));//horseid排序
-        if(!JSON.parse(sessionStorage.getItem('sort_horsesLeftKeys'))||JSON.parse(sessionStorage.getItem('sort_horsesLeftKeys')).toString()!=sort_horsesLeftKeys.toString()){
+        if(!JSON.parse(localStorage.getItem('sort_horsesLeftKeys'))||JSON.parse(localStorage.getItem('sort_horsesLeftKeys')).toString()!=sort_horsesLeftKeys.toString()){
             sortHorseRange(horseNumElems,horsesLefts,sort_horsesLeftsValues,totalDistance,reverse_openData,rangeNumImg);//底部实时排名,排名发生改变时重新排名。
         }
-        sessionStorage.setItem('sort_horsesLeftKeys',JSON.stringify(sort_horsesLeftKeys));//把旧的排名存起来，和之后的排名做比较
+        localStorage.setItem('sort_horsesLeftKeys',JSON.stringify(sort_horsesLeftKeys));//把旧的排名存起来，和之后的排名做比较
         horseWrapLeftValue -= 30;//背景切换速度
         horseSkyLeftValue -= 10;//天空移动速度 
         if(leftMax>totalDistance){ //totalDistance 600
