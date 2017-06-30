@@ -280,3 +280,144 @@ i{
     /*background-color: #7461d4;*/
     color: #000000;
 }
+.innerHorseWrap .resultDialog{
+    position: absolute;
+    padding:0 30px;
+    width: 440px;
+    height: 350px;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -260px;
+    transition: 0.5s all ease-out;
+    background-color: #0d2753;
+    background-image: url(../images/resultLogo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #6b7050;
+    border-radius: 12px;
+    display: none;
+}
+.issueAndDate{
+    color: white;
+    margin-top:12px;
+}
+.issueAndDate .andDate{
+    font-size:12px;;
+}
+.resultMiddleContent{
+    height: 145px;
+    margin-top:25px;
+}
+.resultMiddleContent .yajunHorse{
+    background: #051b34;
+    width: 30%;
+    text-align: center;
+    transform: scale(0.8);
+        border-radius: 10%;
+}
+.resultMiddleContent .guanjunHorse{
+    background: #051b34;
+    width: 40%;
+    text-align: center;
+    transform: scale(0.9);
+        border-radius: 10%;
+}
+.resultMiddleContent .jijunHorse{
+    background: #051b34;
+    width: 30%;
+    text-align: center;
+    transform: scale(0.8);
+        border-radius: 10%;
+}
+.guanjunHorse .horse1{
+    animation: horse_run infinite 450ms forwards step-start;
+    background-image: url(../images/horse_1.png);
+    width: 150px;
+    height: 99px;
+    background-size: 512px;
+    background-position: 25px 0px;
+    transform: scale(0.9);
+}
+.yajunHorse .horse2{
+    animation: horse_run infinite 450ms forwards step-start;
+    background-image: url(../images/horse_2.png);
+    width: 150px;
+    height: 99px;
+    background-size: 512px;
+    background-position: 25px 0px;
+    transform: scale(0.8);
+    margin-left: -12%;
+}
+.jijunHorse .horse3{
+    animation: horse_run infinite 450ms forwards step-start;
+    background-image: url(../images/horse_3.png);
+    width: 150px;
+    height: 99px;
+    background-size: 512px;
+    background-position: 25px 0px;
+    transform: scale(0.8);
+    margin-left: -12%;
+}
+.yajunHorse .yajunNum{
+    background-image: url(../images/number_h.png);
+    vertical-align: middle;
+    width: 45px;
+    height: 45px;
+    background-position: -6px -9px;
+}
+.guanjunHorse .guanjunNum{
+    background-image: url(../images/number_h.png);
+    vertical-align: middle;
+    width: 45px;
+    height: 45px;
+    background-position: -6px -9px;
+}
+.jijunHorse .jijunNum{
+    background-image: url(../images/number_h.png);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    width: 45px;
+    height: 45px;
+    background-position: -6px -9px;
+}
+.yajunText,.guanjunText,.jijunText{
+    vertical-align: middle;
+}
+.resultOrders  .resultOrder {
+    display: inline-block;
+    margin: 0 1.2%;
+    background-repeat: no-repeat;
+    background-image: url(../images/number_h.png);
+    background-position: -6px -9px;
+    width: 45px;
+    height: 45px;
+}
+.resultOrders {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    margin-top: 50px;
+}
+i.resultNum {
+    position: relative;
+    top: -20px;
+    display: inline-block;
+}
+.resultDialog .closeResultDialog {
+    position: absolute;
+    width: 20px;
+    text-align: center;
+    background: gray;
+    right: 2px;
+    top: 2px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+}
+.resultDialog .closeResultDialog:hover{
+    background: orange;
+}

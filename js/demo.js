@@ -8,6 +8,8 @@ let horseSkyLeftValue;
 let horseLineLeft = document.querySelector('.horseLineLeft');
 let horseLineRight = document.querySelector('.horseLineRight');
 let horseQuan = document.querySelector('.horseQuan');
+let resultDialog = document.querySelector('.resultDialog');//弹幕
+let closeResultDialog = document.querySelector('.resultDialog .closeResultDialog');//关闭檀木按钮
 let horseQuanRightValue;
 let horseLineRightValue;
 let horseLineLeftValue;
@@ -18,7 +20,7 @@ let duration = [34.0,37,39,...Array(7).fill(1).map(()=>40*(randomBetween(1.5,2))
 let openData = [8,4,5,6,1,3,2,7,9,10];//从后台传回的开奖结果
 let reverse_openData = openData.map((v,i,arr)=>arr[arr.length-1-i]);//反转排序
 let horsesLeftsValues = null;
-let rangeNumImg = Array(10).fill(1).map((item,index)=>`${-6-index*62.35}px -9px`);
+let rangeNumImg = Array(10).fill(1).map((item,index)=>`${-6-index*62.35}px -9px`);//底部排序
 let openResult = new Object();//声明一个对象来存储openData和duration的对应关系
 openData.forEach((item,index)=>{//openData和duration对应
     openResult[`horse_${item}`] = duration[index];
@@ -38,6 +40,7 @@ function horseInit(horses,horseOrders,horseNums,rangeNumImg){//初始位置
     horseNumElems.forEach((num,i)=>{//底部数字
         num.style.backgroundPosition = rangeNumImg[i];
     });
+    horseOrders.style.left = '65px';
     horseOrderArr.forEach((order,i)=>{
         order.style.top = `${15+i*29.15}px`;
     });
@@ -92,6 +95,7 @@ function horseMove(horses,speeds = {},leftValue = {},total = totalDistance){//�
         let speedMin = Math.min(...Object.values(speeds));
         let speedMax = Math.max(...Object.values(speeds));
         let leftMax = Math.max(...Object.values(horsesLefts).map(value=>parseInt(value)));
+        let leftMin = Math.min(...Object.values(horsesLefts).map(value=>parseInt(value)));
         let horsesLeftsKeys = Object.keys(horsesLefts);//马的id数组,马排序
         horsesLeftsValues = Object.values(horsesLefts);//马的距离数组
         let sort_horsesLeftsValues = horsesLeftsValues.sort((a,b)=>parseInt(a)-parseInt(b));//按跑动距离从小道大排序后的数组
@@ -123,6 +127,29 @@ function horseMove(horses,speeds = {},leftValue = {},total = totalDistance){//�
                     horse.style.left = `${leftValue[horse.id]}px`;
                 });
                 Object.freeze(lastSpeeds);//冻结使速度不变
+                //结束后弹出开奖结果，结束判断是最后一匹马超过终点线,即leftMin大于跑步距离
+                if(leftMin>totalDistance){
+                    let yajunHorse = document.querySelector('.yajunHorse .horse2');
+                    let guanjunHorse = document.querySelector('.guanjunHorse .horse1');
+                    let jijunHorse = document.querySelector('.jijunHorse .horse3');
+                    let yajunNum = document.querySelector('.yajunHorse .yajunNum');
+                    let guanjunNum = document.querySelector('.guanjunHorse .guanjunNum');
+                    let jijunNum = document.querySelector('.jijunHorse .jijunNum');
+                    let resultOrders = [...document.querySelectorAll('.resultOrders .resultOrder')];
+                    yajunHorse.style.backgroundImage = `url(./images/horse_${openData[1]}.png)`;
+                    guanjunHorse.style.backgroundImage = `url(./images/horse_${openData[0]}.png)`;
+                    jijunHorse.style.backgroundImage = `url(./images/horse_${openData[2]}.png)`;
+                    yajunNum.style.backgroundPosition = rangeNumImg[openData[1]-1];
+                    guanjunNum.style.backgroundPosition = rangeNumImg[openData[0]-1];
+                    jijunNum.style.backgroundPosition = rangeNumImg[openData[2]-1];
+                    resultOrders.forEach((v,i)=>{//弹出开奖结果底部排列
+                        v.style.backgroundPosition = rangeNumImg[openData[i+3]-1];
+                    });
+                    resultDialog.style.display = 'block';
+                    setTimeout(()=>{
+                        window.clearTimeout(timeout);//1秒后关闭动画
+                    },1000);
+                }
             }else{
                 horseLineRightValue+=5;
                 horseLineRight.style.right = `${horseLineRightValue}px`;
@@ -186,3 +213,8 @@ function getKeyFromValue(obj,value){//通过对象的value值查找与其映射�
 /*function createSpeed(){//随机生成跑步速度
  return Array(8).fill(1).map(()=>(randomBetween(0.7,1)*5));
  }*/
+//开奖结果弹幕关闭
+closeResultDialog.onclick = function(){
+    resultDialog.style.display = 'none';
+    horseInit(horses,horseOrders,horseNumElems,rangeNumImg);//回到初始位置
+};
