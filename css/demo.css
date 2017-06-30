@@ -211,15 +211,9 @@ i{
     margin-left: 18px;
 }
 .rangeNum_10,.rangeNum_9,.rangeNum_8,.rangeNum_7,.rangeNum_6,.rangeNum_5,.rangeNum_4,.rangeNum_3,.rangeNum_2,.rangeNum_1{
-    /*color: #ffffff;*/
     width: 45px;
     height: 45px;
     line-height: 45px;
-    /*text-align: center;*/
-    /*font-size: 30px;*/
-    /*font-weight: bold;*/
-    /*border-radius: 5px;*/
-    /*border: 1px solid #d5e9f5;*/
     position: relative;
     margin:0 5px;
 }
@@ -241,43 +235,33 @@ i{
     left: 12px;
 }
 .rangeNum_10{
-    /*background-color: #dd3022;*/
     color: #ffffff;
 }
 .rangeNum_9{
-    /*background-color: #d9d7d7;*/
     color:#1b1a18;
 }
 .rangeNum_8{
-    /*background-color: #0022e6;*/
     color: #ffffff;
 }
 .rangeNum_7{
-    /*background-color: #eaca44;*/
     color: #1c1a18;
 }
 .rangeNum_6{
-    /*background-color: #5ccd46;*/
     color: #ffffff;;
 }
 .rangeNum_5{
-    /*background-color: #202020;*/
     color: #f7c143;;
 }
 .rangeNum_4{
-    /*background-color: #d43af3;*/
     color: #1b1a18;
 }
 .rangeNum_3{
-    /*background-color: #e88030;*/
     color: #000000;
 }
 .rangeNum_2{
-    /*background-color: #578ee9;*/
     color: #000000;
 }
 .rangeNum_1{
-    /*background-color: #7461d4;*/
     color: #000000;
 }
 .innerHorseWrap .resultDialog{
